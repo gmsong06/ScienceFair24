@@ -3,7 +3,7 @@
 import pandas as pd
 import pickle
 
-df = pd.read_excel("Diagnosis_FS_prog_HippoVol.xlsx")
+df = pd.read_excel("../input_data/Diagnosis_FS_prog_HippoVol.xlsx")
 
 time_array = {}
 value_array = {}
@@ -165,22 +165,22 @@ filter_initial_values()
 fill_missing_values()
 
 # Export to excel time array and volume array
-export_to_excel(time_array, "time_array.xlsx")
-export_to_excel(value_array, "volume_array.xlsx")
+export_to_excel(time_array, "../output_data/time_array.xlsx")
+export_to_excel(value_array, "../output_data/volume_array.xlsx")
 
 # Convert excel to txt
-excel_to_txt("time_array.xlsx", "time_array.txt")
-excel_to_txt("volume_array.xlsx", "volume_array.txt")
+excel_to_txt("../output_data/time_array.xlsx", "../output_data/time_array.txt")
+excel_to_txt("../output_data/volume_array.xlsx", "../output_data/volume_array.txt")
 
 # Remove first row and columns (OASISID and headers)
-file_path_time = 'time_array.txt'
-file_path_volume = 'volume_array.txt'
+file_path_time = '../output_data/time_array.txt'
+file_path_volume = '../output_data/volume_array.txt'
 
 remove_first_row_and_columns(file_path_time)
 remove_first_row_and_columns(file_path_volume)
 
 # Save data as pkl
-save_data_as_pkl("time_array.txt", "volume_array.txt", "data.pkl")
+save_data_as_pkl("../output_data/time_array.txt", "../output_data/volume_array.txt", "../output_data/data.pkl")
 
 # Print XA and YA from pkl
-print_xa_and_ya_from_pkl("data.pkl")
+print_xa_and_ya_from_pkl("../output_data/data.pkl")

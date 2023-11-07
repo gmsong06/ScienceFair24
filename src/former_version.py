@@ -66,6 +66,6 @@ def format_data(extracted_data, max_years, output_file_path):
 
 
 if __name__ == "__main__":
-    data, max_years = extract_data("diagnosis_CDR.xlsx")
-    format_data(data, max_years, "formatted_diagnosis_CDR.xlsx")
+    data, max_years = extract_data("../input_data/diagnosis_CDR.xlsx")
+    format_data(data, max_years, "../output_data/formatted_diagnosis_CDR.xlsx")
 
