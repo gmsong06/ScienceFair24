@@ -1,3 +1,5 @@
+# OUTDATED VERSION USE updated_version.py INSTEAD
+
 import openpyxl
 from openpyxl.styles import Font
 
