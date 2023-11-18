@@ -114,14 +114,22 @@ def save_data_as_pkl(x_file_path, y_file_path, pkl_file_path):
     :param x_file_path: Time array path
     :param y_file_path: Volume array path
     :param pkl_file_path: pkl file path
-
     """
 
-    with open(x_file_path, "r") as file_x, open(y_file_path, "r") as file_y:
-        data = {
-            "XA": file_x.read(),
-            "YA": file_y.read()
-        }
+    # Read and process data from the X file
+    with open(x_file_path, "r") as file_x:
+        x_data = file_x.read().split()  # Split the contents by whitespace
+        x_data = [float(x) if x != 'NaN' else float('nan') for x in x_data]
+
+    # Read and process data from the Y file
+    with open(y_file_path, "r") as file_y:
+        y_data = file_y.read().split()  # Split the contents by whitespace
+        y_data = [float(y) if y != 'NaN' else float('nan') for y in y_data]
+
+    data = {
+        "XA": x_data,
+        "YA": y_data
+    }
 
     # Save the data to a .pkl file
     with open(pkl_file_path, "wb") as pkl_file:
