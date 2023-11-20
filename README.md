@@ -3,7 +3,7 @@
 ## clean_outliers.py
 Clean time and volume arrays
 
-**input:** ```time_array.txt volume_array.txt```
+**input:** ```time_array.txt volume_array.txt```  
 **output:** ```filtered_time_array.txt filtered_volume_array```
 
 
