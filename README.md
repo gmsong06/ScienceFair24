@@ -1,5 +1,11 @@
 # ScienceFair24
 
+## find_max_years.py
+Finds the max year of a patient
+
+**input:** ```time.xlsx```  
+**output:** ```max_years.xlsx```
+
 ## hippo_vol_array.py
 Converts diagnosis data into a pkl data file
 
